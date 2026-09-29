@@ -5,7 +5,7 @@
  * MuseScore Studio
  * Music Composition & Notation
  *
- * Copyright (C) 2024 MuseScore Limited and others
+ * Copyright (C) 2026 MuseScore Limited and others
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 3 as
@@ -20,34 +20,20 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#pragma once
+import QtQuick
 
-#include <qqmlintegration.h>
+import Muse.Ui
+import Muse.UiComponents
 
-namespace mu::instrumentsscene {
-namespace LayoutPanelItemType {
-Q_NAMESPACE;
-QML_ELEMENT;
+// Placeholder: settings for a shared-staves group haven't been designed yet
+StyledPopupView {
+    id: root
 
-enum ItemType {
-    UNDEFINED = -1,
-    ROOT,
-    SHARED_PART,
-    PART,
-    INSTRUMENT,
-    STAFF,
-    SYSTEM_OBJECTS_LAYER,
-    CONTROL_ADD_STAFF,
-};
-Q_ENUM_NS(ItemType)
+    property bool needActiveFirstItem: false
 
-// Position of a top-level part row within a shared-staves group
-enum SharedGroupRole {
-    NOT_IN_GROUP = 0,
-    GROUP_HEADER,
-    GROUP_MEMBER,
-    GROUP_LAST_MEMBER,
-};
-Q_ENUM_NS(SharedGroupRole)
-}
+    contentWidth: 240
+    contentHeight: 60
+
+    function load(obj) {
+    }
 }
